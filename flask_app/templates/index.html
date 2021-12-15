@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Email</title>
+</head>
+<body>
+    <h1>New Email</h1>
+    <form action="/email/create" method='POST'>
+        <label for="email_name">Email: </label>
+        <input type="text" name='email_name'>
+        <input type="submit">
+    </form>
+    <form action="">
+        
+    </form>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+</body>
+</html>
